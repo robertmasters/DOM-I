@@ -40,3 +40,14 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+//making a new array out of the a tags
+
+const ATags = document.querySelectorAll('a')
+
+ATags[0] = siteContent['nav']['nav-item-1']
+ATags[1] = siteContent['nav']['nav-item-2']
+ATags[2] = siteContent['nav']['nav-item-3']
+ATags[3] = siteContent['nav']['nav-item-4']
+ATags[4] = siteContent['nav']['nav-item-5']
+ATags[5] = siteContent['nav']['nav-item-6']
