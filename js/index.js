@@ -51,8 +51,10 @@ aTags[3].textContent = siteContent['nav']['nav-item-4']
 aTags[4].textContent = siteContent['nav']['nav-item-5']
 aTags[5].textContent = siteContent['nav']['nav-item-6']
 
+
 const ctaH1 = document.querySelector('h1')
-ctaH1.textContent = siteContent['cta']['h1']
+const breaksH1 = (s) => s.split(' ').join('<br>')//made a function that adds the break into the h1 using the split and join methods, spliting it at the space and adding a <br> into it with the join method.
+ctaH1.innerHTML = breaksH1(siteContent['cta']['h1'])
 
 const ctaButton =document.querySelector('button')
 ctaButton.textContent= siteContent['cta']['button']
@@ -61,7 +63,7 @@ const ctaImg = document.getElementById('cta-img')
 ctaImg.setAttribute('src', siteContent['cta']['img-src'])
 
 //making all the h4 tags into an array
-const h4Tags = document.querySelectorAll('h4')
+const h4Tags = document.querySelectorAll('text-content, h4')
 
 //attributing content to the h4 tags, content is obtained from the site content object.
 h4Tags[0].textContent = siteContent['main-content']['features-h4']
@@ -100,17 +102,23 @@ footer.textContent = siteContent['footer']['copyright']
 //using appendChild
 const navParent = document.querySelector('nav')
 const newAppend = document.createElement('a')
+newAppend.href = '#'
 newAppend.textContent = 'smile :)'
+newAppend.style.color = 'green'
 navParent.appendChild(newAppend)
 
 
 //using prependChild
 const newPrepend = document.createElement('a')
 newPrepend.textContent = ':( frown'
+newPrepend.href = '#'
+newPrepend.style.color = 'green'
 navParent.prepend(newPrepend)
+
 
 
 //change color of nav to green
 aTags.forEach(a =>{
   a.style.color = 'green'
 })
+
